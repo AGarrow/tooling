@@ -7,7 +7,7 @@ git ls-files -m | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs bundle exec rub
 # Bypass with git push --no-verify
 
 BRANCH=`git rev-parse --abbrev-ref HEAD`
-PROTECTED_BRANCHES="^(master)"
+PROTECTED_BRANCHES="^(master|main)"
 
 if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]; then
   read -p "Are you sure you want to commit to \"$BRANCH\" ? (y/n): " -n 1 -r < /dev/tty
