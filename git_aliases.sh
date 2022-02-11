@@ -11,6 +11,7 @@ alias gb="git branch | grep \* | cut -d ' ' -f2"
 alias gf="git fetch"
 alias grom="git rebase origin/master"
 alias grc="git rebase --continue"
+alias gm="gc master && gpl"
 
 
 ## this will create a new branch on github with the same name as the current branch
