@@ -10,6 +10,9 @@ git config --global core.hooksPath "$PWD/.git-templates/hooks/"
 # config git ignore
 git config --global core.excludesfile "$PWD/git/.gitignore"
 
+# install direnv
+brew install direnv
+
 # config slate
 if ! test -f "/Applications/Slate.app"; then
   echo "slate already installed"
