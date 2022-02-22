@@ -1,3 +1,4 @@
+# setup tooling
 touch ~/.zshrc
 ln -sf "$PWD/tooling.zsh" ~/tooling.zsh
 grep -qxF 'source ~/tooling.zsh' ~/.zshrc || echo 'source ~/tooling.zsh' >> ~/.zshrc
@@ -5,6 +6,9 @@ source ~/.zshrc
 
 # config git hooks
 git config --global core.hooksPath "$PWD/.git-templates/hooks/"
+
+# config git ignore
+git config --global core.excludesfile "$PWD/git/.gitignore"
 
 # config slate
 if ! test -f "/Applications/Slate.app"; then
