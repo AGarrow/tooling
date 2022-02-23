@@ -1,3 +1,6 @@
+# install coreutils
+brew install coreutils
+
 # setup tooling
 touch ~/.zshrc
 ln -sf "$PWD/tooling.zsh" ~/tooling.zsh

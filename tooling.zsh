@@ -1,2 +1,3 @@
-source ./git_aliases.zsh
-source ./rails_aliases.zsh
+DIR="$(dirname $(greadlink -f $0))"
+source "${DIR}/git_aliases.zsh"
+source "${DIR}/rails_aliases.zsh"
