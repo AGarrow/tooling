@@ -19,9 +19,6 @@ alias external-left-two-thirds move screenOriginX;screenOriginY 2*screenSizeX/3;
 layout work-triple-full 'Code':REPEAT ${external-full}
 layout work-triple-full 'Google Chrome':REPEAT ${built-in-full}
 
-# Keyboard shortcuts for each layout
-bind l:shift;ctrl layout work-triple-full
-
 # Home Clamshell
 
 alias ultrawide-left-two-thirds move screenOriginX;screenOriginY screenOriginX+2442;screenSizeY ${built-in}
@@ -42,8 +39,12 @@ layout home-clamshell-vs-code 'Code':REPEAT ${ultrawide-vs-code}
 layout home-clamshell-vs-code 'Google Chrome':REPEAT ${ultrawide-vs-chrome}
 layout home-clamshell-vs-code 'Firefox':REPEAT ${ultrawide-vs-chrome}
 
+layout mobile 'Code':REPEAT ${built-in-full};
+
 bind c:shift;ctrl layout home-clamshell-vs-code
 bind h:shift;ctrl layout home-clamshell
+bind l:shift;ctrl layout work-triple-full
+bind i:shift;ctrl layout mobile
   
 # Auto-detect when a monitor is plugged in or out
 default home-clamshell resolutions:3440x1440;

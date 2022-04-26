@@ -39,3 +39,9 @@ function gpsu {
   open $url;
   echo $output;
 }
+
+function go {
+  url=$(git remote get-url origin);
+  url=$(echo "$url" | sed -e 's/\.git//' -e 's/\:/\//' -e 's/git@/https\:\/\//');
+  open $url;
+}
