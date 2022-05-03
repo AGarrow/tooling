@@ -9,7 +9,7 @@ alias gps="git push"
 alias gcb="git checkout -b"
 alias gb="git branch | grep \* | cut -d ' ' -f2"
 alias gf="git fetch"
-alias grom="git rebase origin/$g(itMainBranch)"
+alias grom="git rebase origin/$(gitMainBranch)"
 alias grc="git rebase --continue"
 alias gm="gc $(gitMainBranch) && gpl"
 
