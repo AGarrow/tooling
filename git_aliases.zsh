@@ -1,5 +1,13 @@
 edit() { cd ~/ws/$1 && gc $(gitMainBranch) && gpl && subl . ;}
 
+function gitMainBranch() {
+  if git branch | grep -q ' main$'; then
+    echo 'main';
+  else
+    echo 'master';
+  fi
+}
+
 alias gs="git status"
 alias gd="git diff"
 alias gc="git checkout"
@@ -10,16 +18,9 @@ alias gcb="git checkout -b"
 alias gb="git branch | grep \* | cut -d ' ' -f2"
 alias gf="git fetch"
 alias grom="git rebase origin/$(gitMainBranch)"
+alias gromi="EDITOR=vi git rebase -i origin/$(gitMainBranch)"
 alias grc="git rebase --continue"
 alias gm="gc $(gitMainBranch) && gpl"
-
-function gitMainBranch() {
-  if git branch | grep -q ' main$'; then
-    echo 'main';
-  else
-    echo 'master';
-  fi
-}
 
 function ccd() {
   curr=$(pwd)
