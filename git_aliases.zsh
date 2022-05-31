@@ -21,6 +21,7 @@ alias grom="git rebase origin/$(gitMainBranch)"
 alias gromi="EDITOR=vi git rebase -i origin/$(gitMainBranch)"
 alias grc="git rebase --continue"
 alias gm="gc $(gitMainBranch) && gpl"
+alias gsa="git stash apply"
 
 function ccd() {
   curr=$(pwd)
