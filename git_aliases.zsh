@@ -39,6 +39,11 @@ function ccd() {
   fi
 }
 
+ls_ws() {
+ ls ~/ws/ ~/personal
+}
+
+complete -d -F ls_ws ccd
 
 ## this will create a new branch on github with the same name as the current branch
 ## and open a new browser window with the pull requests page.
