@@ -1,2 +1,5 @@
 alias yi="yarn install"
 alias ys="yarn start"
+alias yf="yarn flightcheck"
+alias yct="yarn check_types"
+alias yt="yarn test"
