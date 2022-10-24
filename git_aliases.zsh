@@ -1,4 +1,4 @@
-edit() { cd ~/ws/$1 && gc $(gitMainBranch) && gpl && subl . ;}
+edit() { cd ~/bp/$1 && gc $(gitMainBranch) && gpl && subl . ;}
 
 function gitMainBranch() {
   if git branch | grep -q ' main$'; then
@@ -25,25 +25,26 @@ alias gsa="git stash apply"
 
 function ccd() {
   curr=$(pwd)
-  target=~/ws/${1}
+  target=~/bp/${1}
   if [ -d $target ]
   then
     echo "repo exists locally"
     code $target
   else
     cd ~/bp
-    echo "cloning " git@github.com:bp/${1}.git
-    git clone git@github.com:bp/${1}.git
+    echo "cloning " git@github.com:benepass/${1}.git
+    git clone git@github.com:benepass/${1}.git
     code $target
     cd $curr
   fi
 }
 
-ls_ws() {
- ls ~/ws/ ~/personal
+ls_bp() {
+ ls ~/bp/ ~/personal
 }
 
-complete -d -F ls_ws ccd
+# compdef -d -F ls_ws ccd
+compdef ccd ls_bp
 
 ## this will create a new branch on github with the same name as the current branch
 ## and open a new browser window with the pull requests page.
