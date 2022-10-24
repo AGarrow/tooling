@@ -9,4 +9,4 @@ source "${DIR}/zsh_aliases.zsh"
 
 eval "$(direnv hook zsh)"
 
-prompt='%F{green}%B%1d $:%b%f '
+prompt='%U%F{green}%B%1d%u $:%b%f '
