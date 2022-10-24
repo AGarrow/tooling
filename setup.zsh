@@ -17,12 +17,14 @@ git config --global core.excludesfile "$PWD/git/.gitignore"
 brew install direnv
 
 # config slate
-if ! test -f "/Applications/Slate.app"; then
+if [ ! test -f "/Applications/Slate.app"]; then
   echo "slate already installed"
 else
   curr=$(pwd)
   ln -sf "$PWD/.slate" ~/.slate
-  cd /Applications && curl http://www.ninjamonkeysoftware.com/slate/versions/slate-latest.tar.gz | tar -xz
+  # todo: unpack & unzip this, get a darn cert for personal site.
+  # cd /Applications && curl http://alexi-garrow.com/Slate.zip && unzip Slate.zip
+  cd /Applications
   open Slate.app
   cd $curr
 fi
