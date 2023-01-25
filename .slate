@@ -15,9 +15,9 @@ alias external-right-third move screenOriginX+2*screenSizeX/3;screenOriginY scre
 alias external-left-two-thirds move screenOriginX;screenOriginY 2*screenSizeX/3;screenSizeY ${external}
 
 
-# Work Triple
-layout work-triple-full 'Code':REPEAT ${external-full}
-layout work-triple-full 'Google Chrome':REPEAT ${built-in-full}
+# Home, full screen vs code
+layout work-triple-full 'Code':REPEAT ${built-in-full}
+# layout work-triple-full 'Google Chrome':REPEAT ${built-in-full}
 
 # Home Clamshell
 

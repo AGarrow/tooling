@@ -19,8 +19,11 @@ alias gb="git branch | grep \* | cut -d ' ' -f2"
 alias gf="git fetch"
 alias grom="git rebase origin/$(gitMainBranch)"
 alias gromi="EDITOR=vi git rebase -i origin/$(gitMainBranch)"
+alias grod="git rebase origin/develop"
+alias grodi="git rebase -i origin/develop"
 alias grc="git rebase --continue"
 alias gm="gc $(gitMainBranch) && gpl"
+alias gcd="gc develop && gpl"
 alias gsa="git stash apply"
 
 function ccd() {
