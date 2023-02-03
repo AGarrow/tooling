@@ -1,0 +1,7 @@
+alias dc="pipenv run python manage.py shell"
+alias ds="pipenv run python manage.py runserver"
+alias dsa="ENABLE_ADMIN=TRUE pipenv run python manage.py runserver"
+alias psh="pipenv shell"
+alias django="pipenv run python manage.py"
+alias flightcheck="black . && isort ."
+alias pyt="pipenv run pytest --reuse-db"

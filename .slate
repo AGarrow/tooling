@@ -1,0 +1,51 @@
+# Monitor Aliases
+config orderScreensLeftToRight false
+
+alias built-in 0
+alias vertical 2
+alias external 1
+
+# Work Setup
+
+alias external-full   move screenOriginX;screenOriginY screenSizeX;screenSizeY ${external}
+alias vertical-full   move screenOriginX;screenOriginY screenSizeX;screenSizeY ${vertical}
+alias built-in-full  move screenOriginX;screenOriginY screenSizeX;screenSizeY ${built-in}
+
+alias external-right-third move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY ${external}
+alias external-left-two-thirds move screenOriginX;screenOriginY 2*screenSizeX/3;screenSizeY ${external}
+
+
+# Home, full screen vs code
+layout work-triple-full 'Code':REPEAT ${built-in-full}
+# layout work-triple-full 'Google Chrome':REPEAT ${built-in-full}
+
+# Home Clamshell
+
+alias ultrawide-left-two-thirds move screenOriginX;screenOriginY screenOriginX+2442;screenSizeY ${built-in}
+alias ultrawide-right-third move screenOriginX+2442;screenOriginY screenSizeX;screenSizeY ${built-in}
+
+alias ultrawide-left-quarter move screenOriginX;screenOriginY screenOriginX+860;screenSizeY ${built-in}
+alias ultrawide-middle-half move screenOriginX+860;screenOriginY 1720;screenSizeY ${built-in}
+alias ultrawide-right-quarter move screenOriginX+2580;screenOriginY 860;screenSizeY ${built-in}
+alias ultrawide-vs-code move screenOriginX+1149;screenOriginY 2288;screenSizeY ${built-in}
+alias ultrawide-vs-chrome move screenOriginX;screenOriginY screenOriginX+1149;screenSizeY ${built-in}
+
+layout home-clamshell 'Google Chrome':REPEAT ${ultrawide-left-quarter}
+layout home-clamshell 'iTerm2':REPEAT ${ultrawide-right-quarter}
+layout home-clamshell 'Sublime Text':REPEAT ${ultrawide-middle-half}
+layout home-clamshell 'Code':REPEAT ${ultrawide-middle-half}
+
+layout home-clamshell-vs-code 'Code':REPEAT ${ultrawide-vs-code}
+layout home-clamshell-vs-code 'Google Chrome':REPEAT ${ultrawide-vs-chrome}
+layout home-clamshell-vs-code 'Firefox':REPEAT ${ultrawide-vs-chrome}
+
+layout mobile 'Code':REPEAT ${built-in-full};
+
+bind c:shift;ctrl layout home-clamshell-vs-code
+bind h:shift;ctrl layout home-clamshell
+bind l:shift;ctrl layout work-triple-full
+bind i:shift;ctrl layout mobile
+  
+# Auto-detect when a monitor is plugged in or out
+default home-clamshell resolutions:3440x1440;
+default work-triple    resolutions:1680x1050;2560x1440;1440x2560;

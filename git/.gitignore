@@ -1,0 +1,3 @@
+# this file serves as a global .gitignore
+.envrc
+.DS_Store
