@@ -31,7 +31,7 @@ function ccd() {
     echo "repo exists locally"
     code $target
   else
-    cd ~/bp
+    cd ~/benepass
     echo "cloning " git@github.com:benepass/${1}.git
     git clone git@github.com:benepass/${1}.git
     code $target
