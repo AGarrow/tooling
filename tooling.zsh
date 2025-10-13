@@ -1,4 +1,12 @@
-DIR="$(dirname $(greadlink -f $0))"
+# Resolve the full absolute path to this script's directory
+if command -v greadlink >/dev/null 2>&1; then
+  READLINK_CMD="greadlink"
+else
+  READLINK_CMD="readlink"
+fi
+
+DIR="$(dirname "$($READLINK_CMD -f "$0" 2>/dev/null || realpath "$0")")"
+
 autoload -Uz compinit
 compinit
 source "${DIR}/git_aliases.zsh"
@@ -7,6 +15,7 @@ source "${DIR}/django_aliases.zsh"
 source "${DIR}/yarn_aliases.zsh"
 source "${DIR}/zsh_aliases.zsh"
 source "${DIR}/benepass_aliases.zsh"
+source "${DIR}/aws_aliases.zsh"
 
 eval "$(ssh-agent -s)"
 eval "$(direnv hook zsh)"
