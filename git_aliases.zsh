@@ -23,28 +23,6 @@ alias grc="git rebase --continue"
 alias gm="gc $(gitMainBranch) && gpl"
 alias gsa="git stash apply"
 
-function ccd() {
-  curr=$(pwd)
-  target=~/bp/${1}
-  if [ -d $target ]
-  then
-    echo "repo exists locally"
-    code $target
-  else
-    cd ~/benepass
-    echo "cloning " git@github.com:benepass/${1}.git
-    git clone git@github.com:benepass/${1}.git
-    code $target
-    cd $curr
-  fi
-}
-
-ls_bp() {
- ls ~/bp/ ~/personal
-}
-
-# compdef -d -F ls_ws ccd
-compdef ccd ls_bp
 
 ## this will create a new branch on github with the same name as the current branch
 ## and open a new browser window with the pull requests page.

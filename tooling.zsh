@@ -16,6 +16,9 @@ source "${DIR}/yarn_aliases.zsh"
 source "${DIR}/zsh_aliases.zsh"
 source "${DIR}/benepass_aliases.zsh"
 source "${DIR}/aws_aliases.zsh"
+source "${DIR}/cursor_aliases.zsh"
+
+ git config --global core.hooksPath ~/personal/tooling/.git-templates/hooks
 
 eval "$(ssh-agent -s)"
 eval "$(direnv hook zsh)"
